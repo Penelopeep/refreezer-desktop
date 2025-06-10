@@ -1,5 +1,5 @@
 const crowdin = {
-  'ar_ar': {
+  'ar-AR': {
     'Home': 'القائمة الرئيسية',
     'Search': 'بحث',
     'Library': 'المكتبة',
@@ -400,7 +400,7 @@ const crowdin = {
         'ساعد في ترجمة هذا التطبيق على Crowdin!',
     'Allow screen to turn off': 'السماح للشاشة بإيقاف التشغيل'
   },
-  'ast_es': {
+  'ast-ES': {
     'Home': 'Aniciu',
     'Search': 'Buscar',
     'Library': 'Biblioteca',
@@ -736,7 +736,7 @@ const crowdin = {
     'Playlist removed from offline!':
         '¡La llista quitóse del mou ensin conexón!'
   },
-  'bul_bg': {
+  'bg-BG': {
     'Home': 'Начало',
     'Search': 'Търсене',
     'Library': 'Библиотека',
@@ -1146,7 +1146,7 @@ const crowdin = {
         'Помогнете за превода на това приложение в Crowdin!',
     'Allow screen to turn off': 'Позволете на екрана да се изключи'
   },
-  'cs_cz': {
+  'cs-CZ': {
     'Home': 'Domů',
     'Search': 'Hledat',
     'Library': 'Knihovna',
@@ -1370,6 +1370,7 @@ const crowdin = {
     'Track count': 'Počet skladeb',
     "If you want to use custom directory naming - use '/' as directory separator.":
         "Pokud chcete použít vlastní pojmenování adresářů - použijte '/' jako oddělovač adresářů.",
+    'Share': 'Sdílet',
     'Save album cover': 'Uložit obal alba',
     'Warning': 'Varování',
     'Using too many concurrent downloads on older/weaker devices might cause crashes!':
@@ -1549,7 +1550,7 @@ const crowdin = {
         '\nPomozte s překladem této aplikace na Crowdin!',
     'Allow screen to turn off': 'Povolit vypnutí obrazovky'
   },
-  'de_de': {
+  'de-DE': {
     'Home': 'Startseite',
     'Search': 'Suche',
     'Library': 'Bibliothek',
@@ -1954,7 +1955,7 @@ const crowdin = {
         'Helfen Sie mit, diese App auf Crowdin zu übersetzen!',
     'Allow screen to turn off': 'Bildschirm ausschalten erlauben'
   },
-  'el_gr': {
+  'el-GR': {
     'Home': 'Αρχική',
     'Search': 'Αναζήτηση',
     'Library': 'Βιβλιοθήκη',
@@ -2368,7 +2369,7 @@ const crowdin = {
         'Βοηθήστε στη μετάφραση αυτής της εφαρμογής στο Crowdin!',
     'Allow screen to turn off': 'Αφήστε την οθόνη να απενεργοποιηθεί'
   },
-  'es_es': {
+  'es-ES': {
     'Home': 'Inicio',
     'Search': 'Buscar',
     'Library': 'Biblioteca',
@@ -2765,7 +2766,7 @@ const crowdin = {
         '¡Ayuda a traducir esta aplicación en Crowdin!',
     'Allow screen to turn off': 'Permitir que la pantalla se apague'
   },
-  'fa_ir': {
+  'fa-IR': {
     'Home': 'صفحه اصلی',
     'Search': 'گشتن',
     'Library': 'مجموعه',
@@ -3166,7 +3167,7 @@ const crowdin = {
     'Help translating this app on Crowdin!': 'به ترجمه این برنامه کمک کنید!',
     'Allow screen to turn off': 'مجوز خاموش شدن صفحه نمایش'
   },
-  'fil_ph': {
+  'fil-PH': {
     'Home': 'Tahanan',
     'Search': 'Hanapin',
     'Library': 'Aklatan',
@@ -3474,7 +3475,7 @@ const crowdin = {
         '\"Hindi pinayagan ang permission, kinansel ang download!\"!',
     'Crowdin': 'Crowdin'
   },
-  'fr_fr': {
+  'fr-FR': {
     'Home': 'Accueil',
     'Search': 'Recherche',
     'Library': 'Bibliothèque',
@@ -3889,7 +3890,7 @@ const crowdin = {
         'Aidez-nous à traduire cette application sur Crowdin !',
     'Allow screen to turn off': "Permettre à l'écran de s'éteindre"
   },
-  'he_il': {
+  'he-IL': {
     'Home': 'מסך הבית',
     'Search': 'חיפוש',
     'Library': 'הספרייה',
@@ -4262,7 +4263,7 @@ const crowdin = {
     'Duration': 'משך זמן',
     'Sort': 'מיון'
   },
-  'hi_in': {
+  'hi-IN': {
     'Home': 'होम',
     'Search': 'खोज',
     'Library': 'लाइब्रेरी',
@@ -4386,6 +4387,7 @@ const crowdin = {
     'General': 'सामान्य',
     'Appearance': 'दिखावट',
     'Quality': 'गुणवत्ता',
+    'Deezer': 'डीज़र',
     'Theme': 'थीम',
     'Currently': 'वर्तमान में',
     'Select theme': 'थीम चुने',
@@ -4621,9 +4623,50 @@ const crowdin = {
     'Track removed from offline!': 'ट्रैक को ऑफ़लाइन से हटा दिया गया!',
     'Removed album from offline!': 'एल्बम को ऑफ़लाइन से निकाला गया!',
     'Playlist removed from offline!': 'प्लेलिस्ट को ऑफ़लाइन से हटा दिया गया!',
-    'Repeat': 'दोहराएँ'
+    'Repeat': 'दोहराएँ',
+    'Repeat one': 'एक गाने को दोहराएं',
+    'Repeat off': 'दोहराना बंद',
+    'Love': 'प्यार',
+    'Unlove': 'नापसंद',
+    'Dislike': 'नापसंद करें',
+    'Close': 'बंद करें',
+    'Sort playlist': 'प्लेलिस्ट जमाएं',
+    'Sort ascending': 'बढ़ते क्रम में जमाएं',
+    'Sort descending': 'घटते क्रम में जमाएं',
+    'Stop': 'रोकें',
+    'Start': 'शुरू करें',
+    'Clear all': 'सभी साफ़ करें',
+    'Play previous': 'पिछला चलाएं',
+    'Play': 'गाना चलाएं',
+    'Pause': 'स्थगित करें',
+    'Remove': 'हटाएं',
+    'Seekbar': 'प्रगति पट्टी',
+    'Singles': 'इकलौते गीत',
+    'Featured': 'लक्षित',
+    'Fans': 'प्रशंसक',
+    'Duration': 'अवधि',
+    'Sort': 'व्यवस्थित करें',
+    'Your ARL might be expired, try logging out and logging back in using new ARL or browser.':
+        'आपका ए र ल पुराना हो गया हैं। एक नए ए र ल या ब्राउज़र से दोबारा लॉगिन करके देखिए।',
+    'The original freezer development team': 'फ्रीज़र के मूल निर्माता',
+    'Donate': 'दान करें',
+    'You should rather support your favorite artists, instead of this app!':
+        'इस ऐप से अच्छा तो, आपको अपने पसंदीदा कलाकारों का समर्थन करना चाहिए!',
+    'No really, go support your favorite artists instead ;)':
+        'नहीं सच में, जाकर अपने पसंदीदा कलाकारों का समर्थन कीजिए ;)',
+    'Storage permission is required to download content.\nPlease open settings and grant storage permission to ReFreezer.':
+        'डाउनलोड करने के लिए स्टोरेज की अनुमति चाहिए। कृप्या सेटिंग्स में जाकर रिफ़्रीज़र को अनुमति प्रदान करें।',
+    'Open system settings': 'सिस्टम सेटिंग्स खोलें',
+    'Application Log': 'आदवेदन संस्करण',
+    'Are you sure you want to log out?': 'क्या आप वाकई लॉग आउट करना चाहते हैं?',
+    'Download failed!': 'डाउनलोड असफल!',
+    'Permission denied, download canceled!': 'अनुमति नहीं मिली, डाउनलोड रद्द!',
+    'Crowdin': 'क्राउडिन',
+    'Help translating this app on Crowdin!':
+        'क्राउडिन पर इस ऐप के अनुवाद में समर्थन करें!',
+    'Allow screen to turn off': 'स्क्रीन को बंद होने की अनुमति दें'
   },
-  'hr_hr': {
+  'hr-HR': {
     'Home': 'Početna',
     'Search': 'Pretraži',
     'Library': 'Biblioteka',
@@ -5032,7 +5075,7 @@ const crowdin = {
         'Pomozite prevesti ovu aplikaciju na Crowdin!',
     'Allow screen to turn off': 'Dopusti da se zaslon isključi'
   },
-  'hu_hu': {
+  'hu-HU': {
     'Home': 'Kezdőlap',
     'Search': 'Keresés',
     'Library': 'Kedvencek',
@@ -5384,7 +5427,7 @@ const crowdin = {
     'Playlist removed from offline!':
         'Lejátszási lista eltávolítva a kapcsolat nélküli üzemmódból!'
   },
-  'id_id': {
+  'id-ID': {
     'Home': 'Beranda',
     'Search': 'Cari',
     'Library': 'Koleksi',
@@ -5392,6 +5435,8 @@ const crowdin = {
         'Mode offline, tidak dapat memutar aliran atau daftar putar pintar.',
     'Added to library': 'Ditambahkan ke koleksi',
     'Download': 'Unduh',
+    'Disk': 'Disk',
+    'Offline': 'Offline',
     'Top Tracks': 'Lagu Populer',
     'Show more tracks': 'Tampilkan lebih banyak lagu',
     'Top': 'Populer ',
@@ -5459,6 +5504,7 @@ const crowdin = {
     'Login using browser': 'Masuk menggunakan browser',
     'Login using token': 'Masuk menggunakan token',
     'Enter ARL': 'Masukkan ARL',
+    'Token (ARL)': 'Token (ARL)',
     'Save': 'Simpan',
     "If you don't have account, you can register on deezer.com for free.":
         'Jika Anda tidak memiliki akun, Anda dapat mendaftar di deezer.com secara gratis.',
@@ -5506,6 +5552,7 @@ const crowdin = {
     'General': 'Umum',
     'Appearance': 'Tampilan',
     'Quality': 'Kualitas',
+    'Deezer': 'Deezer',
     'Theme': 'Tema',
     'Currently': 'Saat ini',
     'Select theme': 'Pilih tema',
@@ -5561,6 +5608,7 @@ const crowdin = {
     'Language changed, please restart ReFreezer to apply!':
         'Bahasa diganti, Mulai ulang aplikasi untuk menerapkannya!',
     'Importing...': 'Mengimpor...',
+    'Radio': 'Radio',
     'Flow': 'Alur',
     'Track is not available on Deezer!': 'Lagu tidak tersedia di Deezer!',
     'Failed to download track! Please restart.':
@@ -5625,6 +5673,7 @@ const crowdin = {
     'Ask before downloading': 'Tanyakan sebelum mengunduh',
     'Search history': 'Riwayat pencarian',
     'Clear search history': 'Bersihkan riwayat pencarian',
+    'LastFM': 'LastFM',
     'Login to enable scrobbling.': 'Masuk untuk mengaktifkan scrobbling.',
     'Login to LastFM': 'Masuk ke LastFM',
     'Username': 'Nama Pengguna',
@@ -5650,6 +5699,7 @@ const crowdin = {
     'Play mix': 'Putar acak',
     'Share show': 'Bagikan acara',
     'Date added': 'Tanggal ditambahkan',
+    'Discord': 'Discord',
     'Official Discord server': 'Server Resmi Discord',
     'Restart of app is required to properly log out!':
         'Perlu memulai ulang aplikasi untuk keluar secara benar!',
@@ -5670,6 +5720,7 @@ const crowdin = {
     'Blur player background': 'Latar belakang pemutar buram',
     'Might have impact on performance':
         'Mungkin berdampak pada performa perangkat anda',
+    'Font': 'Huruf',
     'Select font': 'Pilih font',
     "This app isn't made for supporting many fonts, it can break layouts and overflow. Use at your own risk!":
         'Aplikasi ini tidak dibuat untuk mendukung banyak font, ini dapat merusak tata letak dan tampilan. Gunakan dengan resiko anda sendiri!',
@@ -5679,12 +5730,19 @@ const crowdin = {
     'Visualizer': 'Visualisasi',
     'Show visualizers on lyrics page. WARNING: Requires microphone permission!':
         'Tampilkan visualisasi di halaman lirik. PERINGATAN: Dibutuhkan ijin microphone!',
+    'Tags': 'Tags',
+    'Album': 'Album',
     'Track number': 'Nomor lagu',
     'Disc number': 'Nomor disk',
     'Album artist': 'Album Artis',
     'Date/Year': 'Tanggal/Tahun',
+    'Label': 'Label',
+    'ISRC': 'ISRC',
+    'UPC': 'UPC',
     'Track total': 'Total lagu',
+    'BPM': 'BPM',
     'Unsynchronized lyrics': 'Lirik yang tidak tersinkronisasi',
+    'Genre': 'Aliran',
     'Contributors': 'Kontributor',
     'Album art': 'Gambar album',
     'Deezer is unavailable in your country, ReFreezer might not work properly. Please use a VPN':
@@ -5692,6 +5750,7 @@ const crowdin = {
     'Deezer is unavailable': 'Deezer tidak tersedia',
     'Continue': 'Lanjutkan',
     'Email Login': 'Email Masuk',
+    'Email': 'Email',
     'Missing email or password!': 'Email atau kata sandi salah!',
     'Error logging in using email, please check your credentials.\nError:':
         'Kesalahan saat masuk menggunakan email. Silahkan cek datanya lagi.\nKesalahan:',
@@ -5699,12 +5758,15 @@ const crowdin = {
     'Change display mode': 'Ganti mode tampilan',
     'Enable high refresh rates': 'Aktifkan refresh rate tinggi',
     'Display mode': 'Mode tampilan',
+    'Spotify v1': 'Spotify v1',
     'Import Spotify playlists up to 100 tracks without any login.':
         'Impor daftar putar Spotify sampai 100 lagu tanpa masuk.',
     'Download imported tracks': 'Mengunduh lagu yang diimpor',
     'Start import': 'Mulai impor',
+    'Spotify v2': 'Spotify v2',
     'Import any Spotify playlist, import from own Spotify library. Requires free account.':
         'Impor semua daftat putar Spotify, Impor dari koleksi Spotifymu. Dibutuhkan akun gratis.',
+    'Spotify Importer v2': 'Pengimpor Spotify v2',
     'This importer requires Spotify Client ID and Client Secret. To obtain them:':
         'Importer membutuhkan Spotify Client ID dan Client Secret. \nUntuk mendapatkannya:',
     '1. Go to: developer.spotify.com/dashboard and create an app.':
@@ -5713,14 +5775,35 @@ const crowdin = {
     '2. In the app you just created go to settings, and set the Redirect URL to: ':
         '2. Di app yang baru kamu buat pergi ke pengaturan, dan atur Redirect URL ke: ',
     'Copy the Redirect URL': 'Salin Redirect URL',
+    'Client ID': 'ID Klien',
+    'Client Secret': 'Rahasia Klien',
+    'Authorize': 'Mengesahkan',
     'Logged in as: ': 'Masuk sebagai: ',
     'Import playlists by URL': 'Impor daftar putar dengan URL',
+    'URL': 'URL',
     'Options': 'Opsi',
     'Invalid/Unsupported URL': 'URL Tidak Valid/Tidak Didukung',
     'Please wait...': 'Tunggu sebentar...',
-    'Login using email': 'Masuk menggunakan email'
+    'Login using email': 'Masuk menggunakan email',
+    'Track removed from offline!': 'Trek dihapus dari offline!',
+    'Removed album from offline!': 'Album yang dihapus dari offline!',
+    'Playlist removed from offline!': 'Daftar putar dihapus dari offline!',
+    'Repeat': 'Ulangi',
+    'Repeat one': 'Ulangi sekali',
+    'Repeat off': 'Ulangi off',
+    'Love': 'Love',
+    'Unlove': 'Unlove',
+    'Dislike': 'Tidak suka',
+    'Close': 'Tutup',
+    'Sort playlist': 'Sort playlists',
+    'Sort ascending': 'Urutkan naik',
+    'Sort descending': 'Urutkan ke bawah',
+    'Stop': 'Stop',
+    'Start': 'Mulai',
+    'Clear all': 'Hapus semua',
+    'Play previous': 'Putar sebelumnya'
   },
-  'it_it': {
+  'it-IT': {
     'Home': 'Pagina Iniziale',
     'Search': 'Cerca',
     'Library': 'Libreria',
@@ -6128,7 +6211,7 @@ const crowdin = {
         'Aiutaci a tradurre questa app su Crowdin!',
     'Allow screen to turn off': 'Consenti allo schermo di spegnersi'
   },
-  'ko_ko': {
+  'ko-KR': {
     'Home': '홈',
     'Search': '검색',
     'Library': '라이브러리',
@@ -6404,7 +6487,7 @@ const crowdin = {
     'Remove offline': '오프라인 트랙 제거',
     'Playlist removed from library!': '라이브러리에서 재생목록이 삭제되었습니다!'
   },
-  'nl_nl': {
+  'nl-NL': {
     'Home': 'Startpagina',
     'Search': 'Zoek',
     'Library': 'Bibliotheek',
@@ -6769,7 +6852,7 @@ const crowdin = {
         'Help deze app te vertalen op Crowdin!',
     'Allow screen to turn off': 'Scherm uitschakelen toestaan'
   },
-  'pl_pl': {
+  'pl-PL': {
     'Home': 'Strona główna',
     'Search': 'Szukaj',
     'Library': 'Biblioteka',
@@ -6778,6 +6861,7 @@ const crowdin = {
     'Added to library': 'Dodane do biblioteki',
     'Download': 'Pobierz',
     'Disk': 'Dysk',
+    'Offline': 'Offline',
     'Top Tracks': 'Najlepsze utwory',
     'Show more tracks': 'Pokaż więcej utworów',
     'Top': 'Najlepsze',
@@ -6806,6 +6890,7 @@ const crowdin = {
     'Please check your connection and try again later...':
         'Proszę sprawdź swoje połączenie internetowe i spróbuj ponownie później...',
     'Show more': 'Pokaż więcej',
+    'Importer': 'Importer',
     'Currently supporting only Spotify, with 100 tracks limit':
         'Obecnie obsługuje tylko Spotify, z limitem 100 utworów',
     'Due to API limitations': 'Ze względu na ograniczenia API',
@@ -6843,6 +6928,7 @@ const crowdin = {
     'Login using browser': 'Zaloguj się za pomocą przeglądarki',
     'Login using token': 'Logowanie przy użyciu tokenu',
     'Enter ARL': 'Wprowadź ARL',
+    'Token (ARL)': 'Token (ARL)',
     'Save': 'Zapisz',
     "If you don't have account, you can register on deezer.com for free.":
         'Jeśli nie masz konta, możesz zarejestrować się na deezer.com za darmo.',
@@ -6890,6 +6976,7 @@ const crowdin = {
     'General': 'Ogólne',
     'Appearance': 'Wygląd',
     'Quality': 'Jakość',
+    'Deezer': 'Deezer',
     'Theme': 'Motyw',
     'Currently': 'Obecnie',
     'Select theme': 'Wybierz motyw',
@@ -6921,6 +7008,7 @@ const crowdin = {
     'Downloads naming': 'Nazewnictwo pobieranych',
     'Downloaded tracks filename': 'Nazwa pliku pobranego utworu',
     'Valid variables are': 'Prawidłowe zmienne to',
+    'Reset': 'Zresetuj',
     'Clear': 'Wyczyść',
     'Create folders for artist': 'Utwórz foldery dla wykonawcy',
     'Create folders for albums': 'Utwórz foldery dla albumów',
@@ -6943,6 +7031,8 @@ const crowdin = {
     'Language changed, please restart ReFreezer to apply!':
         'Zmieniono język, uruchom ponownie ReFreezer aby zastosować!',
     'Importing...': 'Importowanie...',
+    'Radio': 'Radio',
+    'Flow': 'Flow',
     'Track is not available on Deezer!': 'Ścieżka nie jest dostępna w Deezer!',
     'Failed to download track! Please restart.':
         'Nie udało się pobrać utworu! Proszę uruchomić ponownie.',
@@ -6955,6 +7045,7 @@ const crowdin = {
     'Download Settings': 'Ustawienia pobierania plików',
     'Create folder for playlist': 'Utwórz folder dla playlisty',
     'Download .LRC lyrics': 'Pobierz tekst .LRC',
+    'Proxy': 'Sewer proxy',
     'Not set': 'Nie ustawiono',
     'Search or paste URL': 'Szukaj lub wklej URL',
     'History': 'Historia',
@@ -7005,6 +7096,7 @@ const crowdin = {
     'Ask before downloading': 'Zapytaj przed pobraniem',
     'Search history': 'Historia wyszukiwania',
     'Clear search history': 'Wyczyść historię wyszukiwania',
+    'LastFM': 'LastFM',
     'Login to enable scrobbling.': 'Zaloguj się, aby włączyć scrobbling.',
     'Login to LastFM': 'Zaloguj się do LastFM',
     'Username': 'Nazwa użytkownika',
@@ -7030,6 +7122,7 @@ const crowdin = {
     'Play mix': 'Odtwarzaj składankę',
     'Share show': 'Udostępnij podcast',
     'Date added': 'Data dodania',
+    'Discord': 'Discord',
     'Official Discord server': 'Oficjalny serwer Discord',
     'Restart of app is required to properly log out!':
         'Ponowne uruchomienie aplikacji jest wymagane do poprawnego wylogowania!',
@@ -7060,12 +7153,16 @@ const crowdin = {
     'Show visualizers on lyrics page. WARNING: Requires microphone permission!':
         'Pokaż wizualizatorów na stronie tekstowej. UWAGA: Wymaga uprawnienia mikrofonu!',
     'Tags': 'Tagi',
+    'Album': 'Album',
     'Track number': 'Numer utworu',
     'Disc number': 'Numer dysku',
     'Album artist': 'Wykonawca albumu',
     'Date/Year': 'Data/Rok',
     'Label': 'Etykieta',
+    'ISRC': 'ISRC',
+    'UPC': 'UPC',
     'Track total': 'Ilość utworów',
+    'BPM': 'BPM',
     'Unsynchronized lyrics': 'Niezsynchronizowany tekst',
     'Genre': 'Gatunek',
     'Contributors': 'Współautorzy',
@@ -7075,6 +7172,7 @@ const crowdin = {
     'Deezer is unavailable': 'Deezer jest niedostępny',
     'Continue': 'Kontynuuj',
     'Email Login': 'Logowanie przez e-mail',
+    'Email': 'Adres e-mail',
     'Missing email or password!': 'Brakujący adres email lub hasło!',
     'Error logging in using email, please check your credentials.\nError:':
         'Błąd podczas logowania przez email, sprawdź dane logowania.\nBłąd:',
@@ -7082,10 +7180,12 @@ const crowdin = {
     'Change display mode': 'Zmień widok',
     'Enable high refresh rates': 'Włącz wysoką częstotliwość odświeżania',
     'Display mode': 'Tryb wyświetlania',
+    'Spotify v1': 'Spotify v1',
     'Import Spotify playlists up to 100 tracks without any login.':
         'Importuj playlisty Spotify do 100 utworów bez żadnego logowania.',
     'Download imported tracks': 'Pobierz zaimportowane utwory',
     'Start import': 'Rozpocznij importowanie',
+    'Spotify v2': 'Spotify v2',
     'Import any Spotify playlist, import from own Spotify library. Requires free account.':
         'Zaimportuj dowolną playlistę Spotify ze swojej biblioteki Spotify. Wymaga darmowego konta.',
     'Spotify Importer v2': 'Importer Spotify v2',
@@ -7097,9 +7197,12 @@ const crowdin = {
     '2. In the app you just created go to settings, and set the Redirect URL to: ':
         '2. Przejdź do ustawień aplikacji, którą właśnie utworzyłeś i ustaw URL przekierowania na: ',
     'Copy the Redirect URL': 'Skopiuj URL przekierowania',
+    'Client ID': 'Client ID',
+    'Client Secret': 'Client Secret',
     'Authorize': 'Autoryzuj',
     'Logged in as: ': 'Zalogowano jako: ',
     'Import playlists by URL': 'Importuj playlisty przez adres URL',
+    'URL': 'Adres URL',
     'Options': 'Ustawienia',
     'Invalid/Unsupported URL': 'Niepoprawny/nieobsługiwany adres URL',
     'Please wait...': 'Zaczekaj...',
@@ -7132,9 +7235,28 @@ const crowdin = {
     'Duration': 'Czas trwania',
     'Sort': 'Sortowanie',
     'Your ARL might be expired, try logging out and logging back in using new ARL or browser.':
-        'Twój ARL mógł wygasnąć, spróbuj wylogować się i zalogować jeszcze raz używając nowego tokena ARL lub przeglądarki.'
+        'Twój ARL mógł wygasnąć, spróbuj wylogować się i zalogować jeszcze raz używając nowego tokena ARL lub przeglądarki.',
+    'The original freezer development team':
+        'Oryginalny zespół deweloperów freezer',
+    'Donate': 'Dotacja',
+    'You should rather support your favorite artists, instead of this app!':
+        'Powinieneś raczej wesprzeć swoich ulubionych artystów, zamiast tej aplikacji!',
+    'No really, go support your favorite artists instead ;)':
+        'Nie, naprawdę proszę o wsparcie dla Twoich ulubionych artystów ;)',
+    'Storage permission is required to download content.\nPlease open settings and grant storage permission to ReFreezer.':
+        'Do pobrania treści wymagane jest uprawnienie do pamięci.\nProszę otworzyć ustawienia i przyznać ReFreezerowi uprawnienia do pamięci.',
+    'Open system settings': 'Otwórz Ustawienia systemu',
+    'Application Log': 'Logi aplikacji',
+    'Are you sure you want to log out?': 'Czy na pewno chcesz się wylogować?',
+    'Download failed!': 'Pobieranie nie powiodło się!',
+    'Permission denied, download canceled!':
+        'Brak uprawnień, pobieranie anulowane!',
+    'Crowdin': 'Crowdin',
+    'Help translating this app on Crowdin!':
+        'Pomóż w tłumaczeniu tej aplikacji na Crowdin!',
+    'Allow screen to turn off': 'Zezwól ekranowi wyłączyć'
   },
-  'pt_br': {
+  'pt-BR': {
     'Home': 'Início',
     'Search': 'Busca',
     'Library': 'Biblioteca',
@@ -7538,7 +7660,7 @@ const crowdin = {
         'Ajude a traduzir este aplicativo no Crowdin!',
     'Allow screen to turn off': 'Permitir que a tela seja desligada'
   },
-  'ro_ro': {
+  'ro-RO': {
     'Home': 'Pagina de pornire',
     'Search': 'Căutare',
     'Library': 'Librărie',
@@ -7948,7 +8070,7 @@ const crowdin = {
         'Ajută la traducerea acestei aplicații pe Crowdin!',
     'Allow screen to turn off': 'Permite ecranului să se închidă'
   },
-  'ru_ru': {
+  'ru-RU': {
     'Home': 'Главная',
     'Search': 'Поиск',
     'Library': 'Библиотека',
@@ -8351,7 +8473,7 @@ const crowdin = {
         'Помогите перевести это приложение на Crowdin!',
     'Allow screen to turn off': 'Разрешить отключение экрана'
   },
-  'sk_sk': {
+  'sk-SK': {
     'Home': 'Domov',
     'Search': 'Hľadať',
     'Library': 'Knižnica',
@@ -8717,7 +8839,7 @@ const crowdin = {
     'Your ARL might be expired, try logging out and logging back in using new ARL or browser.':
         'Vaše ARL vypršalo. Skúste sa odhlásiť a znovu prihlásiť s novým ARL alebo cez prehliadač.'
   },
-  'sl_sl': {
+  'sl-SI': {
     'Home': 'Domov',
     'Search': 'Išči',
     'Library': 'Knjižnica',
@@ -9096,8 +9218,41 @@ const crowdin = {
     'Your ARL might be expired, try logging out and logging back in using new ARL or browser.':
         'Vaš ARL je mogoče potekel, poskusite se odjaviti in prijaviti nazaj z novim ARL ali brskalnikom.'
   },
-  'te_in': {'Home': 'హోమ్'},
-  'tr_tr': {
+  'te-IN': {
+    'Home': 'హోమ్',
+    'Search': 'వెతుకు',
+    'Library': 'లైబ్రరీ',
+    "Offline mode, can't play flow or smart track lists.":
+        'ఆఫ్ లైన్ మోడ్ లో ఉన్నారు, ప్లే చేయలేరు.',
+    'Added to library': 'లైబ్రరీకి కలపబడింది',
+    'Download': 'డౌన్లోడ్',
+    'Disk': 'డిస్క్',
+    'Offline': 'ఆఫ్ లైన్',
+    'Top Tracks': 'టాప్ ట్రాక్స్',
+    'Show more tracks': 'మరిన్ని ట్రాక్స్ చూపించు',
+    'Top': 'టాప్',
+    'Top Albums': 'టాప్ ఆల్బమ్స్',
+    'Show all albums': 'అన్ని ఆల్బమ్స్ చూపించు',
+    'Discography': 'డిస్కోగ్రఫీ',
+    'Default': 'డీఫాల్ట్',
+    'Reverse': 'రివర్స్',
+    'Alphabetic': 'అక్షరక్రమం',
+    'Artist': 'కళాకారులు',
+    'Post processing...': 'పోస్ట్ ప్రాసెసింగ్...',
+    'Done': 'పూర్తయింది',
+    'Delete': 'తొలగించు',
+    'Are you sure you want to delete this download?':
+        'దీన్ని నిజంగా తొలగించాలా?',
+    'Cancel': 'రద్దు చేయి',
+    'Downloads': 'డౌన్లోడ్స్',
+    'Clear queue': 'క్యూ ఖాళీ చేయి',
+    "This won't delete currently downloading item":
+        'ఇప్పుడు డౌన్లోడ్ అవుతున్న ఐటమ్ ను ఇది తొలగించదు',
+    'Are you sure you want to delete all queued downloads?':
+        'క్యూ లో ఉన్న అన్ని డౌన్లోడ్స్ ను నిజంగా తొలగించాలా?',
+    'Clear downloads history': 'డౌన్లోడ్స్ హిస్టరీని ఖాళీ చేయి'
+  },
+  'tr-TR': {
     'Home': 'Ana Sayfa',
     'Search': 'Ara',
     'Library': 'Kütüphane',
@@ -9105,6 +9260,7 @@ const crowdin = {
         'Çevrimdışı modu, flow veya akıllı parça listeleri çalınamaz.',
     'Added to library': 'Kütüphaneye eklendi',
     'Download': 'İndir',
+    'Disk': 'Disk',
     'Offline': 'Çevrimdışı',
     'Top Tracks': 'Popülar Parçalar',
     'Show more tracks': 'Daha fazla parça göster',
@@ -9174,6 +9330,7 @@ const crowdin = {
     'Login using browser': 'Tarayıcı kullanarak giriş yapın',
     'Login using token': 'Token kullanarak giriş yap',
     'Enter ARL': 'ARL girin',
+    'Token (ARL)': 'Belirteç (ARL)',
     'Save': 'Kaydet',
     "If you don't have account, you can register on deezer.com for free.":
         "Hesabınız yoksa deezer.com'a ücretsiz kayıt olabilirsiniz.",
@@ -9221,11 +9378,13 @@ const crowdin = {
     'General': 'Genel',
     'Appearance': 'Arayüz',
     'Quality': 'Kalite',
+    'Deezer': 'Deezer',
     'Theme': 'Tema',
     'Currently': 'Şu anda',
     'Select theme': 'Tema seçin',
     'Dark': 'Koyu',
     'Black (AMOLED)': 'Siyah (AMOLED)',
+    'Deezer (Dark)': 'Deezer (Karanlık)',
     'Primary color': 'Ana renk',
     'Selected color': 'Seçilen renk',
     'Use album art primary color': 'Albüm resmini ana renk olarak kullan',
@@ -9288,6 +9447,7 @@ const crowdin = {
     'Download Settings': 'İndirme Ayarları',
     'Create folder for playlist': 'Çalma listesi için klasör oluştur',
     'Download .LRC lyrics': '.LRC şarkı sözlerini indir',
+    'Proxy': "Proxy 'Vekil Sunucu'",
     'Not set': 'Ayarlanmadı',
     'Search or paste URL': 'Arayın veya URL yapıştırın',
     'History': 'Geçmiş',
@@ -9339,6 +9499,7 @@ const crowdin = {
     'Ask before downloading': 'İndirmeden önce sor',
     'Search history': 'Arama geçmişi',
     'Clear search history': 'Arama geçmişini temizle',
+    'LastFM': 'LastFM',
     'Login to enable scrobbling.':
         "Scrobbling'i etkinleştirmek için giriş yap.",
     'Login to LastFM': 'LastFM ile giriş yap',
@@ -9365,6 +9526,7 @@ const crowdin = {
     'Play mix': 'Mix çal',
     'Share show': 'Gösteriyi paylaş',
     'Date added': 'Eklenme tarihi',
+    'Discord': 'Discord',
     'Official Discord server': 'Resmi Discord sunucusu',
     'Restart of app is required to properly log out!':
         'Oturumun düzgün bir şekilde kapatılması için uygulamanın yeniden başlatılması gerekiyor!',
@@ -9402,7 +9564,10 @@ const crowdin = {
     'Album artist': 'Albüm sanatçısı',
     'Date/Year': 'Tarih/Yıl',
     'Label': 'Etiket',
+    'ISRC': 'ISRC',
+    'UPC': 'UPC',
     'Track total': 'Parça toplamı',
+    'BPM': "BPM 'Şarkı ritmi'",
     'Unsynchronized lyrics': 'Senkronize edilmemiş şarkı sözleri',
     'Genre': 'Tür',
     'Contributors': 'Katkıda bulunanlar',
@@ -9420,10 +9585,12 @@ const crowdin = {
     'Change display mode': 'Görünüm modunu değiştir',
     'Enable high refresh rates': 'Yüksek yenileme oranını etkinleştir',
     'Display mode': 'Görünüm modu',
+    'Spotify v1': 'Spotify v1',
     'Import Spotify playlists up to 100 tracks without any login.':
         'Giriş yapmadan Spotify çalma listelerini 100 parçaya kadar içe aktarın.',
     'Download imported tracks': 'İçe aktarılan parçaları indir',
     'Start import': 'İçe aktarmayı başlat',
+    'Spotify v2': 'Spotify v2',
     'Import any Spotify playlist, import from own Spotify library. Requires free account.':
         "Herhangi bir Spotify çalma listesini içe aktarın, Spotify'ın kütüphanesinden içe aktarın. Ücretsiz hesap gerektirir.",
     'Spotify Importer v2': 'Spotify İçe Aktarıcı v2',
@@ -9436,9 +9603,11 @@ const crowdin = {
         "2. Yeni oluşturduğunuz uygulamada Ayarlar'a gidin ve Yönlendirme URL'sini şu şekilde ayarlayın: ",
     'Copy the Redirect URL': "Yönlendirme URL'sini Kopyala",
     'Client ID': 'İstemci ID',
+    'Client Secret': 'İstemci belirteci',
     'Authorize': 'İzin ver',
     'Logged in as: ': 'Giriş yapıldı: ',
     'Import playlists by URL': 'Çalma listelerini URL ile içe aktar',
+    'URL': 'URL',
     'Options': 'Seçenekler',
     'Invalid/Unsupported URL': 'Geçersiz/Desteklenmeyen URL',
     'Please wait...': 'Lütfen bekleyin...',
@@ -9466,12 +9635,36 @@ const crowdin = {
     'Play': 'Oynat',
     'Pause': 'Duraklat',
     'Remove': 'Kaldır',
+    'Seekbar': 'Arama Çubuğu',
+    'Singles': "Tekliler 'Singles'",
     'Featured': 'Öne çıkanlar',
     'Fans': 'Hayranlar',
     'Duration': 'Süre',
-    'Sort': 'Sırala'
+    'Sort': 'Sırala',
+    'Your ARL might be expired, try logging out and logging back in using new ARL or browser.':
+        "ARL'niz sona ermiş olabilir, çıkış yapıp yeni ARL veya tarayıcı kullanarak tekrar giriş yapmayı deneyin.",
+    'The original freezer development team':
+        'Orijinal Freezer geliştirici ekibi',
+    'Donate': 'Bağış yap',
+    'You should rather support your favorite artists, instead of this app!':
+        'Bu uygulama yerine sevdiğiniz sanatçıları desteklemelisiniz!',
+    'No really, go support your favorite artists instead ;)':
+        'Hayır, gerçekten, bunun yerine gidin ve en sevdiğiniz sanatçıları destekleyin ;)',
+    'Storage permission is required to download content.\nPlease open settings and grant storage permission to ReFreezer.':
+        "İçeriği indirmek için depolama izni gereklidir.\nLütfen ayarları açın ve ReFreezer'a depolama izni verin.",
+    'Open system settings': 'Sistem ayarlarını açın',
+    'Application Log': 'Uygulama Günlüğü',
+    'Are you sure you want to log out?':
+        'Çıkış yapmak istediğinize emin misiniz?',
+    'Download failed!': 'İndirme başarısız!',
+    'Permission denied, download canceled!':
+        'İzin reddedildi, indirme iptal edildi!',
+    'Crowdin': 'Crowdin',
+    'Help translating this app on Crowdin!':
+        "Bu uygulamanın Crowdin'de çevrilmesine yardımcı olun!",
+    'Allow screen to turn off': 'Ekranın kapanmasına izin ver'
   },
-  'uk_ua': {
+  'uk-UA': {
     'Home': 'Головна',
     'Search': 'Пошук',
     'Library': 'Бібліотека',
@@ -9847,7 +10040,7 @@ const crowdin = {
     'Your ARL might be expired, try logging out and logging back in using new ARL or browser.':
         'Можливо, термін дії ARL минув, спробуйте вийти з обліковки та повернутися в систему за допомогою нового ARL або браузера.'
   },
-  'ur_pk': {
+  'ur-PK': {
     'Home': 'ہوم',
     'Search': 'تلاش کریں',
     'Library': 'لائبریری',
@@ -9864,7 +10057,7 @@ const crowdin = {
     'Show all albums': 'تمام البمز دکھائیں',
     'Singleton naming': 'Singleton naming'
   },
-  'uwu_uwu': {
+  'uwu-UWU': {
     'Search': 'Seawch',
     'Library': 'Wibwawy',
     "Offline mode, can't play flow or smart track lists.":
@@ -10223,7 +10416,7 @@ const crowdin = {
         'I need your help uwu, please translate this app on crowdin! >w<',
     'Allow screen to turn off': 'Awwow scween to turn o-off'
   },
-  'vi_vi': {
+  'vi-VN': {
     'Home': 'Trang chủ',
     'Search': 'Tìm kiếm',
     'Library': 'Thư viện',
@@ -10593,7 +10786,7 @@ const crowdin = {
     'Your ARL might be expired, try logging out and logging back in using new ARL or browser.':
         'ARL của bạn có thể đã hết hạn, hãy đăng xuất và đăng nhập lại bằng ARL mới hoặc qua trình duyệt.'
   },
-  'zh_cn': {
+  'zh-CN': {
     'Home': '主页',
     'Search': '搜索',
     'Library': '曲库',

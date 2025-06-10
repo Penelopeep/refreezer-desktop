@@ -6,28 +6,30 @@ allprojects {
     }
 }
 
-rootProject.buildDir = '../build'
+rootProject.layout.buildDirectory = rootProject.layout.projectDirectory.dir('../build')
 subprojects {
-    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    project.layout.buildDirectory = rootProject.layout.buildDirectory.dir(project.name)
 
     // This will make sure all the sub projects have an android namespace,
     // if not it will read it from AndroidManifest.xml
-    // Also sets the compileSdk to 34 and the target javaVersion to 17 
+    // Also sets the compileSdk to 35 and the target javaVersion to 17 
     // (needs to be changed manually to the latest in the future)
     afterEvaluate {
         // check if android block is available
         if (it.hasProperty('android')) {
 
             if (it.android.namespace == null) {
-                def manifest = groovy.util.XmlSlurper.parse(file(it.android.sourceSets.main.manifest.srcFile))
+                def manifest = groovy.xml.XmlSlurper.parse(file(it.android.sourceSets.main.manifest.srcFile))
                 def packageName = manifest.@package.text()
                 println("Setting ${packageName} as android namespace")
-                android.namespace = packageName
+                it.android {
+                    namespace = packageName
+                }
             }
 
             def javaVersion = JavaVersion.VERSION_17
             android {
-                def androidApiVersion = 34
+                def androidApiVersion = 35
                 compileSdk androidApiVersion
                 defaultConfig {
                     targetSdk androidApiVersion
@@ -52,5 +54,5 @@ subprojects {
 }
 
 tasks.register("clean", Delete) {
-    delete rootProject.buildDir
+    delete rootProject.layout.buildDirectory
 }

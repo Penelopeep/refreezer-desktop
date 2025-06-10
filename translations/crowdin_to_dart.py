@@ -4,37 +4,37 @@ import zipfile
 import json
 
 lang_crowdin = {
-    "ar": "ar_ar",
-    "ast": "ast_es",
-    "bg": "bul_bg",
-    "cs": "cs_cz",
-    "de": "de_de",
-    "el": "el_gr",
-    "es-ES": "es_es",
-    "fa": "fa_ir",
-    "fil": "fil_ph",
-    "fr": "fr_fr",
-    "he": "he_il",
-    "hi": "hi_in",
-    "hr": "hr_hr",
-    "hu": "hu_hu",
-    "id": "id_id",
-    "it": "it_it",
-    "ko": "ko_ko",
-    "nl": "nl_nl",
-    "pl": "pl_pl",
-    "pt-BR": "pt_br",
-    "ro": "ro_ro",
-    "ru": "ru_ru",
-    "sk": "sk_sk",
-    "sl": "sl_sl",
-    "te": "te_in",
-    "tr": "tr_tr",
-    "uk": "uk_ua",
-    "ur-PK": "ur_pk",
-    "uwu": "uwu_uwu",
-    "vi": "vi_vi",
-    "zh-CN": "zh_cn",
+    "ar": "ar-AR",
+    "ast": "ast-ES",
+    "bg": "bg-BG",
+    "cs": "cs-CZ",
+    "de": "de-DE",
+    "el": "el-GR",
+    "es-ES": "es-ES",
+    "fa": "fa-IR",
+    "fil": "fil-PH",
+    "fr": "fr-FR",
+    "he": "he-IL",
+    "hi": "hi-IN",
+    "hr": "hr-HR",
+    "hu": "hu-HU",
+    "id": "id-ID",
+    "it": "it-IT",
+    "ko": "ko-KR",
+    "nl": "nl-NL",
+    "pl": "pl-PL",
+    "pt-BR": "pt-BR",
+    "ro": "ro-RO",
+    "ru": "ru-RU",
+    "sk": "sk-SK",
+    "sl": "sl-SI",
+    "te": "te-IN",
+    "tr": "tr-TR",
+    "uk": "uk-UA",
+    "ur-PK": "ur-PK",
+    "uwu": "uwu-UWU",
+    "vi": "vi-VN",
+    "zh-CN": "zh-CN",
 }
 
 
@@ -58,7 +58,7 @@ def convert_to_single_quotes(json_str):
     pattern = r'"((?:[^"\\]|\\.)*)":\s*"((?:[^"\\]|\\.)*)"'
     single_quote_json = re.sub(pattern, replace_quotes, json_str)
 
-    locale_pattern = r'"(\w+_\w+)":\s*{'
+    locale_pattern = r'"(\w+-\w+)":\s*{'
     single_quote_json = re.sub(locale_pattern, replace_locale_quotes, single_quote_json)
 
     return single_quote_json
