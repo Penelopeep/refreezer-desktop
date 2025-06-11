@@ -96,8 +96,6 @@ dependencies:
   move_to_background:
     path: ./move_to_background
   numberpicker: ^2.1.2
-  # Awaiting release with fix for flutter 3.29.0:
-  #open_filex: ^4.6.0
   open_filex: ^4.7.0
   package_info_plus: ^8.0.0
   palette_generator: ^0.3.3+3
@@ -156,6 +154,9 @@ flutter:
     - assets/icon.png
     - assets/favorites_thumb.jpg
     - assets/browse_icon.png
+    - assets/icons/DefaultIcon.png
+    - assets/icons/CatIcon.png
+    - assets/icons/DeezerBlueIcon.png
 
   fonts:
     #    - family: Montserrat

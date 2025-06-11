@@ -56,33 +56,50 @@ class _SettingsScreenState extends State<SettingsScreen> {
         children: <Widget>[
           ListTile(
             title: Text('General'.i18n),
-            leading: const LeadingIcon(Icons.settings, color: Color(0xffeca704)),
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const GeneralSettings())),
+            leading:
+                const LeadingIcon(Icons.settings, color: Color(0xffeca704)),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const GeneralSettings())),
           ),
           ListTile(
             title: Text('Download Settings'.i18n),
-            leading: const LeadingIcon(Icons.cloud_download, color: Color(0xffbe3266)),
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DownloadsSettings())),
+            leading: const LeadingIcon(Icons.cloud_download,
+                color: Color(0xffbe3266)),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const DownloadsSettings())),
           ),
           ListTile(
             title: Text('Appearance'.i18n),
-            leading: const LeadingIcon(Icons.color_lens, color: Color(0xff4b2e7e)),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AppearanceSettings())),
+            leading:
+                const LeadingIcon(Icons.color_lens, color: Color(0xff4b2e7e)),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const AppearanceSettings())),
           ),
           ListTile(
             title: Text('Quality'.i18n),
-            leading: const LeadingIcon(Icons.high_quality, color: Color(0xff384697)),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const QualitySettings())),
+            leading:
+                const LeadingIcon(Icons.high_quality, color: Color(0xff384697)),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const QualitySettings())),
           ),
           ListTile(
             title: Text('Deezer'.i18n),
-            leading: const LeadingIcon(Icons.equalizer, color: Color(0xff0880b5)),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const DeezerSettings())),
+            leading:
+                const LeadingIcon(Icons.equalizer, color: Color(0xff0880b5)),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const DeezerSettings())),
           ),
           //Language select
           ListTile(
             title: Text('Language'.i18n),
-            leading: const LeadingIcon(Icons.language, color: Color(0xff009a85)),
+            leading:
+                const LeadingIcon(Icons.language, color: Color(0xff009a85)),
             onTap: () {
               showDialog(
                   context: context,
@@ -94,8 +111,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           title: Text(l.name),
                           subtitle: Text('${l.locale}-${l.country}'),
                           onTap: () async {
-                            I18n.of(customNavigatorKey.currentContext!).locale = Locale(l.locale, l.country);
-                            setState(() => settings.language = '${l.locale}_${l.country}');
+                            I18n.of(customNavigatorKey.currentContext!).locale =
+                                Locale(l.locale, l.country);
+                            setState(() =>
+                                settings.language = '${l.locale}_${l.country}');
                             await settings.save();
                             // Close the SimpleDialog
                             if (context.mounted) Navigator.of(context).pop();
@@ -107,12 +126,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ListTile(
             title: Text('Updates'.i18n),
             leading: const LeadingIcon(Icons.update, color: Color(0xff2ba766)),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const UpdaterScreen())),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const UpdaterScreen())),
           ),
           ListTile(
             title: Text('About'.i18n),
             leading: const LeadingIcon(Icons.info, color: Colors.grey),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const CreditsScreen())),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const CreditsScreen())),
           ),
         ],
       ),
@@ -138,7 +159,8 @@ class _AppearanceSettingsState extends State<AppearanceSettings> {
         children: <Widget>[
           ListTile(
             title: Text('Theme'.i18n),
-            subtitle: Text('Currently'.i18n + ': ${settings.theme.toString().split('.').last}'),
+            subtitle: Text('Currently'.i18n +
+                ': ${settings.theme.toString().split('.').last}'),
             leading: const Icon(Icons.color_lens),
             onTap: () {
               showDialog(
@@ -202,11 +224,28 @@ class _AppearanceSettingsState extends State<AppearanceSettings> {
               ),
               leading: const Icon(Icons.android)),
           ListTile(
+            title: Text('App icon'.i18n),
+            leading: const Icon(Icons.app_settings_alt),
+            subtitle: Text(settings.appIcon ?? 'DefaultIcon'),
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) => IconSelector(() {
+                  setState(() {});
+                  Navigator.of(context).pop();
+                }),
+              );
+            },
+          ),
+          ListTile(
             title: Text('Font'.i18n),
             leading: const Icon(Icons.font_download),
             subtitle: Text(settings.font),
             onTap: () {
-              showDialog(context: context, builder: (context) => FontSelector(() => Navigator.of(context).pop()));
+              showDialog(
+                  context: context,
+                  builder: (context) =>
+                      FontSelector(() => Navigator.of(context).pop()));
             },
           ),
           ListTile(
@@ -234,7 +273,9 @@ class _AppearanceSettingsState extends State<AppearanceSettings> {
           ),
           ListTile(
             title: Text('Visualizer'.i18n),
-            subtitle: Text('Show visualizers on lyrics page. WARNING: Requires microphone permission!'.i18n),
+            subtitle: Text(
+                'Show visualizers on lyrics page. WARNING: Requires microphone permission!'
+                    .i18n),
             leading: const Icon(Icons.equalizer),
             trailing: Switch(
               value: settings.lyricsVisualizer,
@@ -320,7 +361,8 @@ class _AppearanceSettingsState extends State<AppearanceSettings> {
                                   onPressed: () async {
                                     settings.displayMode = i;
                                     await settings.save();
-                                    await FlutterDisplayMode.setPreferredMode(modes[i]);
+                                    await FlutterDisplayMode.setPreferredMode(
+                                        modes[i]);
                                     if (context.mounted) {
                                       Navigator.of(context).pop();
                                     }
@@ -331,6 +373,65 @@ class _AppearanceSettingsState extends State<AppearanceSettings> {
           )
         ],
       ),
+    );
+  }
+}
+
+class IconSelector extends StatefulWidget {
+  final Function callback;
+
+  const IconSelector(this.callback, {super.key});
+
+  @override
+  _IconSelectorState createState() => _IconSelectorState();
+}
+
+class _IconSelectorState extends State<IconSelector> {
+  late String selectedIcon;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedIcon = settings.appIcon ?? 'DefaultIcon';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SimpleDialog(
+      title: Text('Select app icon'.i18n),
+      // Add the warning message here
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
+          child: Text(
+            'Selecting a new icon will exit the app to apply the change!'
+                .i18n, // Translatable string
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ),
+        ...settings.availableIcons.map((String iconKey) {
+          return SimpleDialogOption(
+            onPressed: () async {
+              await settings.updateAppIcon(iconKey);
+              setState(() {
+                selectedIcon = iconKey;
+              });
+              widget.callback();
+            },
+            child: ListTile(
+              contentPadding: EdgeInsets.zero, // Adjust padding if needed
+              leading: Image.asset(
+                'assets/icons/$iconKey.png',
+                width: 32,
+                height: 32,
+              ),
+              title: Text(iconKey),
+              trailing:
+                  selectedIcon == iconKey ? const Icon(Icons.check) : null,
+            ),
+          );
+        }),
+      ],
     );
   }
 }
@@ -347,7 +448,9 @@ class FontSelector extends StatefulWidget {
 class _FontSelectorState extends State<FontSelector> {
   String query = '';
   List<String> get fonts {
-    return settings.fonts.where((f) => f.toLowerCase().contains(query)).toList();
+    return settings.fonts
+        .where((f) => f.toLowerCase().contains(query))
+        .toList();
   }
 
   //Font selected
@@ -421,25 +524,29 @@ class _QualitySettingsState extends State<QualitySettings> {
         children: <Widget>[
           ListTile(
             title: Text('Mobile streaming'.i18n),
-            leading: const LeadingIcon(Icons.network_cell, color: Color(0xff384697)),
+            leading:
+                const LeadingIcon(Icons.network_cell, color: Color(0xff384697)),
           ),
           const QualityPicker('mobile'),
           const FreezerDivider(),
           ListTile(
             title: Text('Wifi streaming'.i18n),
-            leading: const LeadingIcon(Icons.network_wifi, color: Color(0xff0880b5)),
+            leading:
+                const LeadingIcon(Icons.network_wifi, color: Color(0xff0880b5)),
           ),
           const QualityPicker('wifi'),
           const FreezerDivider(),
           ListTile(
             title: Text('Offline'.i18n),
-            leading: const LeadingIcon(Icons.offline_pin, color: Color(0xff009a85)),
+            leading:
+                const LeadingIcon(Icons.offline_pin, color: Color(0xff009a85)),
           ),
           const QualityPicker('offline'),
           const FreezerDivider(),
           ListTile(
             title: Text('External downloads'.i18n),
-            leading: const LeadingIcon(Icons.file_download, color: Color(0xff2ba766)),
+            leading: const LeadingIcon(Icons.file_download,
+                color: Color(0xff2ba766)),
           ),
           const QualityPicker('download'),
         ],
@@ -608,7 +715,8 @@ class _DeezerSettingsState extends State<DeezerSettings> {
         children: <Widget>[
           ListTile(
             title: Text('Content language'.i18n),
-            subtitle: Text('Not app language, used in headers. Now'.i18n + ': ${settings.deezerLanguage}'),
+            subtitle: Text('Not app language, used in headers. Now'.i18n +
+                ': ${settings.deezerLanguage}'),
             leading: const Icon(Icons.language),
             onTap: () {
               showDialog(
@@ -621,7 +729,8 @@ class _DeezerSettingsState extends State<DeezerSettings> {
                                   title: Text(ContentLanguage.all[i].name),
                                   subtitle: Text(ContentLanguage.all[i].code),
                                   onTap: () async {
-                                    setState(() => settings.deezerLanguage = ContentLanguage.all[i].code);
+                                    setState(() => settings.deezerLanguage =
+                                        ContentLanguage.all[i].code);
                                     await settings.save();
                                     if (context.mounted) {
                                       Navigator.of(context).pop();
@@ -633,7 +742,8 @@ class _DeezerSettingsState extends State<DeezerSettings> {
           ),
           ListTile(
             title: Text('Content country'.i18n),
-            subtitle: Text('Country used in headers. Now'.i18n + ': ${settings.deezerCountry}'),
+            subtitle: Text('Country used in headers. Now'.i18n +
+                ': ${settings.deezerCountry}'),
             leading: const Icon(Icons.vpn_lock),
             onTap: () {
               showDialog(
@@ -655,7 +765,8 @@ class _DeezerSettingsState extends State<DeezerSettings> {
                           ],
                         ),
                         onValuePicked: (Country country) {
-                          setState(() => settings.deezerCountry = country.isoCode ?? 'us');
+                          setState(() =>
+                              settings.deezerCountry = country.isoCode ?? 'us');
                           settings.save();
                         },
                       ));
@@ -663,7 +774,9 @@ class _DeezerSettingsState extends State<DeezerSettings> {
           ),
           ListTile(
             title: Text('Log tracks'.i18n),
-            subtitle: Text('Send track listen logs to Deezer, enable it for features like Flow to work properly'.i18n),
+            subtitle: Text(
+                'Send track listen logs to Deezer, enable it for features like Flow to work properly'
+                    .i18n),
             trailing: Switch(
               value: settings.logListen,
               onChanged: (bool v) {
@@ -764,7 +877,8 @@ class _FilenameTemplateDialogState extends State<FilenameTemplateDialog> {
           Text(
             'Valid variables are'.i18n +
                 ': %artists%, %artist%, %title%, %album%, %trackNumber%, %0trackNumber%, %feats%, %playlistTrackNumber%, %0playlistTrackNumber%, %year%, %date%\n\n' +
-                "If you want to use custom directory naming - use '/' as directory separator.".i18n,
+                "If you want to use custom directory naming - use '/' as directory separator."
+                    .i18n,
             style: const TextStyle(
               fontSize: 12.0,
             ),
@@ -779,7 +893,8 @@ class _FilenameTemplateDialogState extends State<FilenameTemplateDialog> {
         TextButton(
           child: Text('Reset'.i18n),
           onPressed: () {
-            _controller.value = _controller.value.copyWith(text: '%artist% - %title%');
+            _controller.value =
+                _controller.value.copyWith(text: '%artist% - %title%');
             _new = '%artist% - %title%';
           },
         ),
@@ -808,7 +923,8 @@ class DownloadsSettings extends StatefulWidget {
 
 class _DownloadsSettingsState extends State<DownloadsSettings> {
   double _downloadThreads = settings.downloadThreads.toDouble();
-  final TextEditingController _artistSeparatorController = TextEditingController(text: settings.artistSeparator);
+  final TextEditingController _artistSeparatorController =
+      TextEditingController(text: settings.artistSeparator);
 
   @override
   Widget build(BuildContext context) {
@@ -852,7 +968,8 @@ class _DownloadsSettingsState extends State<DownloadsSettings> {
               showDialog(
                   context: context,
                   builder: (context) {
-                    return FilenameTemplateDialog(settings.downloadFilename, (f) async {
+                    return FilenameTemplateDialog(settings.downloadFilename,
+                        (f) async {
                       setState(() => settings.downloadFilename = f);
                       await settings.save();
                     });
@@ -861,13 +978,15 @@ class _DownloadsSettingsState extends State<DownloadsSettings> {
           ),
           ListTile(
             title: Text('Singleton naming'.i18n),
-            subtitle: Text('Currently'.i18n + ': ${settings.singletonFilename}'),
+            subtitle:
+                Text('Currently'.i18n + ': ${settings.singletonFilename}'),
             leading: const Icon(Icons.text_format),
             onTap: () {
               showDialog(
                   context: context,
                   builder: (context) {
-                    return FilenameTemplateDialog(settings.singletonFilename, (f) async {
+                    return FilenameTemplateDialog(settings.singletonFilename,
+                        (f) async {
                       setState(() => settings.singletonFilename = f);
                       await settings.save();
                     });
@@ -877,7 +996,8 @@ class _DownloadsSettingsState extends State<DownloadsSettings> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
-              'Download threads'.i18n + ': ${_downloadThreads.round().toString()}',
+              'Download threads'.i18n +
+                  ': ${_downloadThreads.round().toString()}',
               style: const TextStyle(fontSize: 16.0),
             ),
           ),
@@ -897,14 +1017,17 @@ class _DownloadsSettingsState extends State<DownloadsSettings> {
                 await settings.save();
 
                 //Prevent null
-                if (val > 8 && cache.threadsWarning != true && context.mounted) {
+                if (val > 8 &&
+                    cache.threadsWarning != true &&
+                    context.mounted) {
                   showDialog(
                       context: context,
                       builder: (context) {
                         return AlertDialog(
                           title: Text('Warning'.i18n),
                           content: Text(
-                              'Using too many concurrent downloads on older/weaker devices might cause crashes!'.i18n),
+                              'Using too many concurrent downloads on older/weaker devices might cause crashes!'
+                                  .i18n),
                           actions: [
                             TextButton(
                               child: Text('Dismiss'.i18n),
@@ -922,8 +1045,8 @@ class _DownloadsSettingsState extends State<DownloadsSettings> {
           ListTile(
             title: Text('Tags'.i18n),
             leading: const Icon(Icons.label),
-            onTap: () =>
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TagSelectionScreen())),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const TagSelectionScreen())),
           ),
           ListTile(
             title: Text('Create folders for artist'.i18n),
@@ -1010,17 +1133,20 @@ class _DownloadsSettingsState extends State<DownloadsSettings> {
               leading: const Icon(Icons.image)),
           ListTile(
               title: Text('Album cover resolution'.i18n),
-              subtitle: Text("WARNING: Resolutions above 1200 aren't officially supported".i18n),
+              subtitle: Text(
+                  "WARNING: Resolutions above 1200 aren't officially supported"
+                      .i18n),
               leading: const Icon(Icons.image),
               trailing: SizedBox(
                   width: 75.0,
                   child: DropdownButton<int>(
                     value: settings.albumArtResolution,
                     items: [400, 800, 1000, 1200, 1400, 1600, 1800]
-                        .map<DropdownMenuItem<int>>((int i) => DropdownMenuItem<int>(
-                              value: i,
-                              child: Text(i.toString()),
-                            ))
+                        .map<DropdownMenuItem<int>>(
+                            (int i) => DropdownMenuItem<int>(
+                                  value: i,
+                                  child: Text(i.toString()),
+                                ))
                         .toList(),
                     onChanged: (int? n) async {
                       setState(() {
@@ -1031,7 +1157,8 @@ class _DownloadsSettingsState extends State<DownloadsSettings> {
                   ))),
           ListTile(
               title: Text('Create .nomedia files'.i18n),
-              subtitle: Text('To prevent gallery being filled with album art'.i18n),
+              subtitle:
+                  Text('To prevent gallery being filled with album art'.i18n),
               trailing: Switch(
                 value: settings.nomediaFiles,
                 onChanged: (v) {
@@ -1058,7 +1185,8 @@ class _DownloadsSettingsState extends State<DownloadsSettings> {
           ListTile(
             title: Text('Download Log'.i18n),
             leading: const Icon(Icons.sticky_note_2),
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DownloadLogViewer())),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const DownloadLogViewer())),
           )
         ],
       ),
@@ -1159,7 +1287,9 @@ class _GeneralSettingsState extends State<GeneralSettings> {
                           setState(() => settings.offlineMode = false);
                         } else {
                           Fluttertoast.showToast(
-                              msg: 'Error logging in, check your internet connections.'.i18n,
+                              msg:
+                                  'Error logging in, check your internet connections.'
+                                      .i18n,
                               gravity: ToastGravity.BOTTOM,
                               toastLength: Toast.LENGTH_SHORT);
                         }
@@ -1179,7 +1309,8 @@ class _GeneralSettingsState extends State<GeneralSettings> {
           ),
           ListTile(
             title: Text('Copy ARL'.i18n),
-            subtitle: Text('Copy userToken/ARL Cookie for use in other apps.'.i18n),
+            subtitle:
+                Text('Copy userToken/ARL Cookie for use in other apps.'.i18n),
             leading: const Icon(Icons.lock),
             onTap: () async {
               await FlutterClipboard.copy(settings.arl ?? '');
@@ -1190,7 +1321,9 @@ class _GeneralSettingsState extends State<GeneralSettings> {
           ),
           ListTile(
             title: Text('Enable equalizer'.i18n),
-            subtitle: Text('Might enable some equalizer apps to work. Requires restart of ReFreezer'.i18n),
+            subtitle: Text(
+                'Might enable some equalizer apps to work. Requires restart of ReFreezer'
+                    .i18n),
             leading: const Icon(Icons.equalizer),
             trailing: Switch(
               value: settings.enableEqualizer,
@@ -1202,7 +1335,9 @@ class _GeneralSettingsState extends State<GeneralSettings> {
           ),
           ListTile(
             title: Text('LastFM'.i18n),
-            subtitle: Text((settings.lastFMUsername != null) ? 'Log out'.i18n : 'Login to enable scrobbling.'.i18n),
+            subtitle: Text((settings.lastFMUsername != null)
+                ? 'Log out'.i18n
+                : 'Login to enable scrobbling.'.i18n),
             leading: const Icon(FontAwesome5.lastfm),
             onTap: () async {
               if (settings.lastFMUsername != null) {
@@ -1241,8 +1376,8 @@ class _GeneralSettingsState extends State<GeneralSettings> {
           ListTile(
             title: Text('Application Log'.i18n),
             leading: const Icon(Icons.sticky_note_2),
-            onTap: () =>
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ApplicationLogViewer())),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const ApplicationLogViewer())),
           ),
           const FreezerDivider(),
           ListTile(
@@ -1341,7 +1476,10 @@ class _LastFMLoginState extends State<LastFMLogin> {
             LastFM last;
             try {
               last = await LastFM.authenticate(
-                  apiKey: Env.lastFmApiKey, apiSecret: Env.lastFmApiSecret, username: _username, password: _password);
+                  apiKey: Env.lastFmApiKey,
+                  apiSecret: Env.lastFmApiSecret,
+                  username: _username,
+                  password: _password);
             } catch (e) {
               Logger.root.severe('Error authorizing LastFM: $e');
               Fluttertoast.showToast(msg: 'Authorization error!'.i18n);
@@ -1365,23 +1503,30 @@ class StorageInfo {
   final String appFilesDir;
   final int availableBytes;
 
-  StorageInfo({required this.rootDir, required this.appFilesDir, required this.availableBytes});
+  StorageInfo(
+      {required this.rootDir,
+      required this.appFilesDir,
+      required this.availableBytes});
 }
 
 Future<List<StorageInfo>> getStorageInfo() async {
-  final externalDirectories = await ExternalPath.getExternalStorageDirectories();
+  final externalDirectories =
+      await ExternalPath.getExternalStorageDirectories();
 
   List<StorageInfo> storageInfoList = [];
 
   if (externalDirectories.isNotEmpty) {
     for (var dir in externalDirectories) {
-      var availableMegaBytes = (await DiskSpacePlus.getFreeDiskSpaceForPath(dir)) ?? 0.0;
+      var availableMegaBytes =
+          (await DiskSpacePlus.getFreeDiskSpaceForPath(dir)) ?? 0.0;
 
       storageInfoList.add(
         StorageInfo(
           rootDir: dir,
           appFilesDir: dir,
-          availableBytes: availableMegaBytes > 0 ? (availableMegaBytes * 1000000).floor() : 0,
+          availableBytes: availableMegaBytes > 0
+              ? (availableMegaBytes * 1000000).floor()
+              : 0,
         ),
       );
     }
@@ -1453,14 +1598,17 @@ class _DirectoryPickerState extends State<DirectoryPicker> {
                                 padding: EdgeInsets.symmetric(vertical: 8.0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[CircularProgressIndicator()],
+                                  children: <Widget>[
+                                    CircularProgressIndicator()
+                                  ],
                                 ),
                               );
                             }
                             return Column(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
-                                ...List.generate(snapshot.data?.length ?? 0, (i) {
+                                ...List.generate(snapshot.data?.length ?? 0,
+                                    (i) {
                                   StorageInfo si = snapshot.data![i];
                                   return ListTile(
                                     title: Text(si.rootDir),
@@ -1524,7 +1672,9 @@ class _DirectoryPickerState extends State<DirectoryPicker> {
                 onTap: () {
                   setState(() {
                     if (_root == _path) {
-                      Fluttertoast.showToast(msg: 'Permission denied'.i18n, gravity: ToastGravity.BOTTOM);
+                      Fluttertoast.showToast(
+                          msg: 'Permission denied'.i18n,
+                          gravity: ToastGravity.BOTTOM);
                       return;
                     }
                     _previous = _path;
@@ -1618,8 +1768,10 @@ class _CreditsScreenState extends State<CreditsScreen> {
           ),
           const FreezerDivider(),
           const ListTile(
-            title: Text('DJDoubleD', style: TextStyle(fontWeight: FontWeight.bold)),
-            subtitle: Text('Developer, tester, new icon & logo, some translations, ...'),
+            title: Text('DJDoubleD',
+                style: TextStyle(fontWeight: FontWeight.bold)),
+            subtitle: Text(
+                'Developer, tester, new icon & logo, some translations, ...'),
           ),
           const FreezerDivider(),
           /*ListTile(
@@ -1657,7 +1809,8 @@ class _CreditsScreenState extends State<CreditsScreen> {
           ListTile(
             title: Text('Crowdin'.i18n),
             subtitle: Text('Help translating this app on Crowdin!'.i18n),
-            leading: const Icon(ReFreezerIcons.crowdin, color: Color(0xffbdc1c6), size: 36.0),
+            leading: const Icon(ReFreezerIcons.crowdin,
+                color: Color(0xffbdc1c6), size: 36.0),
             onTap: () {
               launchUrlString('https://crowdin.com/project/refreezer');
             },
@@ -1665,15 +1818,20 @@ class _CreditsScreenState extends State<CreditsScreen> {
           ListTile(
             isThreeLine: true,
             title: Text('Donate'.i18n),
-            subtitle: Text('You should rather support your favorite artists, instead of this app!'.i18n),
-            leading: const Icon(FontAwesome5.paypal, color: Colors.blue, size: 36.0),
+            subtitle: Text(
+                'You should rather support your favorite artists, instead of this app!'
+                    .i18n),
+            leading:
+                const Icon(FontAwesome5.paypal, color: Colors.blue, size: 36.0),
             onTap: () {
               showDialog(
                   context: context,
                   builder: (context) {
                     return AlertDialog(
                       title: Text('Donate'.i18n),
-                      content: Text('No really, go support your favorite artists instead ;)'.i18n),
+                      content: Text(
+                          'No really, go support your favorite artists instead ;)'
+                              .i18n),
                       actions: [
                         TextButton(
                           child: const Text('OK'),
@@ -1704,10 +1862,12 @@ class _CreditsScreenState extends State<CreditsScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Image.asset('assets/icon_legacy.png', width: 24, height: 24),
+                        Image.asset('assets/icon_legacy.png',
+                            width: 24, height: 24),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Text(
                               'The original freezer development team'.i18n,
                               textAlign: TextAlign.center,
@@ -1720,7 +1880,8 @@ class _CreditsScreenState extends State<CreditsScreen> {
                             ),
                           ),
                         ),
-                        Image.asset('assets/icon_legacy.png', width: 24, height: 24),
+                        Image.asset('assets/icon_legacy.png',
+                            width: 24, height: 24),
                       ],
                     ),
                   ],
@@ -1739,7 +1900,8 @@ class _CreditsScreenState extends State<CreditsScreen> {
               ),
               const ListTile(
                 title: Text('Bas Curtiz'),
-                subtitle: Text('Icon, logo, banner, design suggestions, tester'),
+                subtitle:
+                    Text('Icon, logo, banner, design suggestions, tester'),
               ),
               const ListTile(
                 title: Text('Tobs'),

@@ -3888,7 +3888,9 @@ const crowdin = {
     'Crowdin': 'Crowdin',
     'Help translating this app on Crowdin!':
         'Aidez-nous à traduire cette application sur Crowdin !',
-    'Allow screen to turn off': "Permettre à l'écran de s'éteindre"
+    'Allow screen to turn off': "Permettre à l'écran de s'éteindre",
+    'Selecting a new icon will exit the app to apply the change!':
+        "Sélectionner une nouvelle icône quittera l'application pour appliquer la modification !"
   },
   'he-IL': {
     'Home': 'מסך הבית',
@@ -6850,7 +6852,9 @@ const crowdin = {
         'Toestemming geweigerd, download geannuleerd!',
     'Help translating this app on Crowdin!':
         'Help deze app te vertalen op Crowdin!',
-    'Allow screen to turn off': 'Scherm uitschakelen toestaan'
+    'Allow screen to turn off': 'Scherm uitschakelen toestaan',
+    'Selecting a new icon will exit the app to apply the change!':
+        'Het selecteren van een nieuw icoon zal de app afsluiten om de wijziging toe te passen!'
   },
   'pl-PL': {
     'Home': 'Strona główna',

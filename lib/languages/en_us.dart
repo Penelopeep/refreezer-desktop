@@ -454,5 +454,9 @@ const language_en_us = {
 
     // 0.7.15
     'Allow screen to turn off': 'Allow screen to turn off',
+
+    // 0.7.16
+    'Selecting a new icon will exit the app to apply the change!':
+        'Selecting a new icon will exit the app to apply the change!',
   }
 };

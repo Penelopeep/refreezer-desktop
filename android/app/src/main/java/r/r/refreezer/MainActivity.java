@@ -63,6 +63,13 @@ public class MainActivity extends AudioServiceActivity {
 
     @Override
     public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
+        super.configureFlutterEngine(flutterEngine);
+
+        // Initialize ChangeIconPlugin
+        ChangeIconPlugin changeIconPlugin = new ChangeIconPlugin(this);
+        changeIconPlugin.initWith(flutterEngine.getDartExecutor().getBinaryMessenger());
+        changeIconPlugin.tryFixLauncherIconIfNeeded();
+
         //Flutter method channel
         new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL).setMethodCallHandler(((call, result) -> {
 

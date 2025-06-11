@@ -27,6 +27,7 @@
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"
         android:required="false"
         android:minSdkVersion="30"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
 
     <uses-feature
         android:name="android.software.leanback"
@@ -38,7 +39,10 @@
     <application
         android:name="${applicationName}"
         android:enableOnBackInvokedCallback="true"
-        android:icon="@mipmap/ic_launcher_round"
+        android:logo="@mipmap/ic_launcher"
+        android:banner="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="ReFreezer"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true">
@@ -59,7 +63,6 @@
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
             android:banner="@mipmap/ic_launcher"
-            android:icon="@mipmap/ic_launcher"
             android:logo="@mipmap/ic_launcher"
             android:windowSoftInputMode="adjustResize"
             android:exported = "true">
@@ -76,9 +79,9 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <!--<category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />-->
             </intent-filter>
-
 
             <!-- Deep Links -->
             <intent-filter>
@@ -113,12 +116,70 @@
                     android:scheme="https"
                     android:host="www.deezer.page.link" />
             </intent-filter>
+            <!-- New short domain -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="https"
+                    android:host="dzr.page.link" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="https"
+                    android:host="www.dzr.page.link" />
             </intent-filter>
         </activity>
+
+        <activity-alias
+            android:name="r.r.refreezer.DefaultIconActivity"
+            android:enabled="true"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:targetActivity="r.r.refreezer.MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name="r.r.refreezer.CatIconActivity"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher_cat"
+            android:roundIcon="@mipmap/ic_launcher_cat_round"
+            android:targetActivity="r.r.refreezer.MainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name="r.r.refreezer.DeezerBlueIconActivity"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher_deezer_blue"
+            android:roundIcon="@mipmap/ic_launcher_deezer_blue_round"
+            android:targetActivity="r.r.refreezer.MainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
         <!--
 			Don't delete the meta-data below.
             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java

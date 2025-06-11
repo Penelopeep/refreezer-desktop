@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:logging/logging.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
@@ -15,6 +16,7 @@ import 'api/download.dart';
 import 'main.dart';
 import 'service/audio_service.dart';
 import 'ui/cached_image.dart';
+import 'utils/app_icon_changer.dart';
 
 part 'settings.g.dart';
 
@@ -126,6 +128,9 @@ class Settings {
   bool useArtColor = false;
   StreamSubscription? _useArtColorSub;
 
+  @JsonKey(defaultValue: 'DefaultIcon')
+  String? appIcon;
+
   //Deezer
   @JsonKey(defaultValue: 'en')
   late String deezerLanguage;
@@ -171,9 +176,26 @@ class Settings {
     return ['Deezer', ...GoogleFonts.asMap().keys];
   }
 
+  // Get all available app icons
+  List<String> get availableIcons {
+    return AppIconChanger.availableIcons.map((icon) => icon.key).toList();
+  }
+
   //JSON to forward into download service
   Map getServiceSettings() {
     return {'json': jsonEncode(toJson())};
+  }
+
+  Future<void> updateAppIcon(String iconKey) async {
+    try {
+      LauncherIcon icon =
+          LauncherIcon.values.firstWhere((e) => e.key == iconKey);
+      await AppIconChanger.changeIcon(icon);
+      appIcon = iconKey;
+      await save();
+    } catch (e) {
+      Logger.root.severe('Error updating app icon: $e');
+    }
   }
 
   void updateUseArtColor(bool v) {
@@ -403,7 +425,6 @@ class Settings {
             primaryColor: primaryColor,
             sliderTheme: _sliderTheme,
             scaffoldBackgroundColor: deezerBg,
-            dialogBackgroundColor: deezerBottom,
             bottomSheetTheme:
                 const BottomSheetThemeData(backgroundColor: deezerBottom),
             cardColor: deezerBg,
@@ -459,7 +480,7 @@ class Settings {
                 return null;
               }),
             ),
-            bottomAppBarTheme: const BottomAppBarTheme(color: deezerBottom)),
+            bottomAppBarTheme: const BottomAppBarTheme(color: deezerBottom), dialogTheme: DialogThemeData(backgroundColor: deezerBottom)),
         Themes.Black: ThemeData(
             useMaterial3: false,
             brightness: Brightness.dark,
@@ -467,7 +488,6 @@ class Settings {
             fontFamily: _fontFamily,
             primaryColor: primaryColor,
             scaffoldBackgroundColor: Colors.black,
-            dialogBackgroundColor: Colors.black,
             sliderTheme: _sliderTheme,
             bottomSheetTheme: const BottomSheetThemeData(
               backgroundColor: Colors.black,
@@ -524,7 +544,7 @@ class Settings {
                 return null;
               }),
             ),
-            bottomAppBarTheme: const BottomAppBarTheme(color: Colors.black))
+            bottomAppBarTheme: const BottomAppBarTheme(color: Colors.black), dialogTheme: DialogThemeData(backgroundColor: Colors.black))
       };
 
   Future<String> getPath() async =>
