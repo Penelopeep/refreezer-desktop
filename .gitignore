@@ -75,5 +75,6 @@ lib/utils/env.g.dart
 translations/refreezer.zip
 translations/ReFreezer (translations).zip
 
-windows/.vs
-windows/out
+
+/windows/out/
+/windows/.vs/
