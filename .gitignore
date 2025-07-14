@@ -74,3 +74,6 @@ lib/utils/env.g.dart
 # Possible translations remnants
 translations/refreezer.zip
 translations/ReFreezer (translations).zip
+
+windows/.vs
+windows/out
