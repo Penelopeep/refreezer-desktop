@@ -1,8 +1,10 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get_it/get_it.dart';
+import 'package:logging/logging.dart';
 import 'package:numberpicker/numberpicker.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -539,7 +541,14 @@ class MenuSheet {
   //===================
 
   showDownloadStartedToast() {
-    Fluttertoast.showToast(msg: 'Downloads added!'.i18n, gravity: ToastGravity.BOTTOM, toastLength: Toast.LENGTH_SHORT);
+    switch (Platform.operatingSystem) {
+      case 'android':
+        Fluttertoast.showToast(msg: 'Downloads started!'.i18n, gravity: ToastGravity.BOTTOM, toastLength: Toast.LENGTH_SHORT);
+        break;
+      default:
+        Logger.root.info('Downloads started!'.i18n);
+        break;
+    }
   }
 
   //Create playlist

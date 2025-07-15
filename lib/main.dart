@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:app_links/app_links.dart';
 import 'package:custom_navigator/custom_navigator.dart';
@@ -14,6 +15,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:quick_actions/quick_actions.dart';
 import 'package:refreezer/ui/restartable.dart';
 //import 'package:restart_app/restart_app.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 import 'api/cache.dart';
 import 'api/deezer.dart';
@@ -36,6 +38,9 @@ late Function updateTheme;
 late Function logOut;
 
 void main() async {
+  sqfliteFfiInit();
+  databaseFactory = databaseFactoryFfi;
+
   WidgetsFlutterBinding.ensureInitialized();
 
   await Permission.notification.isDenied.then((value) {
@@ -240,7 +245,11 @@ class _MainScreenState extends State<MainScreen>
     //Start with parameters
     _setupDeepLinks();
     _loadPreloadInfo();
-    _prepareQuickActions();
+    if (Platform.isAndroid) {
+      //Prepare quick actions for Android
+      _prepareQuickActions();
+    }
+
 
     //Check for updates on background
     Future.delayed(const Duration(seconds: 5), () {

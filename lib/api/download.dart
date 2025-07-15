@@ -71,7 +71,17 @@ class DownloadManager {
     });
 
     //Create offline directory
-    var directory = await getExternalStorageDirectory();
+    Directory? directory;
+    switch (Platform.operatingSystem) {
+      case 'android':
+        directory = await getExternalStorageDirectory();
+        break;
+      case 'windows':
+        directory = await getApplicationSupportDirectory();
+        break;
+      default:
+        throw UnsupportedError('Unsupported platform: ${Platform.operatingSystem}');
+    }
     if (directory != null) {
       offlinePath = p.join(directory.path, 'offline/');
       await Directory(offlinePath!).create(recursive: true);
@@ -661,7 +671,17 @@ class DownloadManager {
     int? playlistCount = Sqflite.firstIntValue(
         (await db!.rawQuery('SELECT COUNT(*) FROM Playlists')));
     //Free space
-    double diskSpace = await DiskSpacePlus.getFreeDiskSpace ?? 0;
+    double diskSpace;
+    switch (Platform.operatingSystem){
+      case 'android':
+        diskSpace = await DiskSpacePlus.getFreeDiskSpace ?? 0;
+        break;
+      case 'windows':
+        diskSpace = 0.0;
+        break;
+      default:
+        throw UnsupportedError('Unsupported platform: ${Platform.operatingSystem}');
+    }
     //Used space
     List<FileSystemEntity> offlineStat =
         await Directory(offlinePath!).list().toList();
@@ -689,6 +709,9 @@ class DownloadManager {
   Future<bool> checkPermission() async {
     //if (await FileUtils.checkManageStoragePermission(
     //    openStoragePermissionSettingsDialog)) {
+    if (!Platform.isAndroid) {
+      return true; //No permission needed on non-Android platforms
+    }
     if (await FileUtils.checkExternalStoragePermissions(
       openStoragePermissionSettingsDialog,
     )) {

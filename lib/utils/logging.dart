@@ -37,8 +37,18 @@ class LogQueueManager {
 }
 
 Future<void> initializeLogging() async {
-  final String path =
-      p.join((await getExternalStorageDirectory())!.path, 'refreezer.log');
+  String path;
+  switch (Platform.operatingSystem) {
+    case 'android':
+      path = p.join((await getExternalStorageDirectory())!.path, 'refreezer.log');
+      break;
+    case 'windows':
+      path = p.join((await getApplicationSupportDirectory()).path, 'refreezer.log');
+      break;
+    default:
+      throw UnsupportedError('Unsupported platform: ${Platform.operatingSystem}');
+  }
+
   final File logFile = File(path);
 
   if (!await logFile.exists()) {

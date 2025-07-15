@@ -85,6 +85,8 @@ class _UpdaterScreenState extends State<UpdaterScreen> {
   }
 
   Future _download() async {
+    //No download on non-Android platforms
+    if (!Platform.isAndroid) return;
     if (!await _hasInstallPackagesPermission()) {
       Fluttertoast.showToast(
           msg: 'Permission denied, download canceled!'.i18n,
@@ -108,8 +110,15 @@ class _UpdaterScreenState extends State<UpdaterScreen> {
           await client.send(http.Request('GET', Uri.parse(url)));
       int? size = res.contentLength;
       //Open file
-      String path =
-          p.join((await getExternalStorageDirectory())!.path, 'update.apk');
+      String path;
+      switch (Platform.operatingSystem) {
+        case 'android':
+          path = p.join((await getExternalStorageDirectory())!.path, 'update.apk');
+          break;
+        default:
+          throw UnsupportedError('Unsupported platform: ${Platform.operatingSystem}');
+      }
+
       File file = File(path);
       IOSink fileSink = file.openWrite();
       //Update progress

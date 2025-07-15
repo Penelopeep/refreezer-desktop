@@ -19,7 +19,17 @@ class _ApplicationLogViewerState extends State<ApplicationLogViewer> {
 
   //Load log from file
   Future _load() async {
-    String path = p.join((await getExternalStorageDirectory())!.path, 'refreezer.log');
+    String path;
+    switch (Platform.operatingSystem) {
+      case 'android':
+        path = p.join((await getExternalStorageDirectory())!.path, 'refreezer.log');
+        break;
+      case 'windows':
+        path = p.join((await getApplicationSupportDirectory()).path, 'refreezer.log');
+        break;
+      default:
+        throw UnsupportedError('Unsupported platform: ${Platform.operatingSystem}');
+    }
     File file = File(path);
     if (await file.exists()) {
       String d = await file.readAsString();
